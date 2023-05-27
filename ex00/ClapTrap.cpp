@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:28:49 by pszleper          #+#    #+#             */
-/*   Updated: 2023/05/26 07:14:27 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/05/27 05:28:40 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ClapTrap::attack(const std::string& target)
 	}
 	if (this->_hit_points == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " has no health points and therefore cannot attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no hit points and therefore cannot attack" << std::endl;
 		return;
 	}
 	ClapTrap*	target_claptrap = this->getClapTrapByName(target);
