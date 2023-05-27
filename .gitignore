@@ -1,4 +1,7 @@
 .vscode
 **/*.o
+**/output
 ex00/ClapTrap
+ex01/ScavTrap
+
 CPP_03*.subject.pdf

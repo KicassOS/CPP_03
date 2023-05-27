@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
+#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 17:11:22 by pszleper          #+#    #+#              #
-#    Updated: 2023/05/24 17:21:24 by pszleper         ###   ########.fr        #
+#    Updated: 2023/05/26 07:45:46 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 COMPILATION = c++ -Wall -Wextra -Werror -std=c++98
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 

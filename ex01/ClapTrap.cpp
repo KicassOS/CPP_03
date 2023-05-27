@@ -6,7 +6,7 @@
 /*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 14:28:49 by pszleper          #+#    #+#             */
-/*   Updated: 2023/05/27 05:36:57 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/05/27 05:36:52 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << "ClapTrap " << this->_name << " has no more hit points and therefore cannot attack" << std::endl;
 		return;
 	}
-	ClapTrap*	target_claptrap = this->getClapTrapByName(target);
+	ClapTrap*	target_claptrap = (ClapTrap*) this->getClapTrapByName(target);
 	if (target_claptrap == NULL)
 	{
 		// assume it's a made up/imaginary target
@@ -117,12 +117,12 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name << " now has " << this->_hit_points << " hit points" << std::endl;
 }
 
-ClapTrap*	ClapTrap::getClapTrapByName(std::string name)
+void*	ClapTrap::getClapTrapByName(std::string name)
 {
 	for (int i = 0; i < ClapTrap::_number_of_targets; i++)
 	{
 		if (ClapTrap::_target_names[i] == name && ClapTrap::_target_instances[i] != this)
-			return ((ClapTrap*) ClapTrap::_target_instances[i]);
+			return (ClapTrap::_target_instances[i]);
 	}
 	return (NULL);
 }
