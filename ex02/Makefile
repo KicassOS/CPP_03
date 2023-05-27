@@ -3,22 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+         #
+#    By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 17:11:22 by pszleper          #+#    #+#              #
-#    Updated: 2023/05/24 17:21:40 by pszleper         ###   ########.fr        #
+#    Updated: 2023/05/27 05:58:46 by pszleper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 COMPILATION = c++ -Wall -Wextra -Werror -std=c++98
 
-NAME = ClapTrap
+NAME = FragTrap
 
-SRC = main.cpp ClapTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEADER = ClapTrap.hpp FragTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 all: $(NAME)
 
