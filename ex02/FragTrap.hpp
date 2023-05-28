@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 05:47:52 by pszleper          #+#    #+#             */
-/*   Updated: 2023/05/27 06:16:36 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/05/28 09:58:25 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class FragTrap : public ClapTrap
 		FragTrap&	operator=(const FragTrap& rhs);				// canonical
 		virtual	~FragTrap(void); 								// canonical
 
+		void	attack(const std::string& target);
 		void	highFivesGuys(void);
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pszleper < pszleper@student.42.fr >        +#+  +:+       +#+        */
+/*   By: pszleper <pszleper@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 05:48:46 by pszleper          #+#    #+#             */
-/*   Updated: 2023/05/27 06:16:45 by pszleper         ###   ########.fr       */
+/*   Updated: 2023/05/28 09:59:07 by pszleper         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,31 @@ FragTrap::~FragTrap(void)
 	std::cout << "FragTrap " << this->_name << " destructor called" << std::endl;
 	this->removeSelfFromTargets();
 	return;
+}
+
+void	FragTrap::attack(const std::string& target)
+{
+	if (this->_energy_points < 1)
+	{
+		std::cout << "FragTrap " << this->_name << " doesn't have enough energy points to attack" << std::endl;
+		return;
+	}
+	if (this->_hit_points == 0)
+	{
+		std::cout << "FragTrap " << this->_name << " has no more hit points and therefore cannot attack" << std::endl;
+		return;
+	}
+	FragTrap*	target_claptrap = (FragTrap*) this->getClapTrapByName(target);
+	if (target_claptrap == NULL)
+	{
+		// assume it's a made up/imaginary target
+		std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+		this->_energy_points--;
+		return;
+	}
+	std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+	target_claptrap->takeDamage(this->_attack_damage);
+	this->_energy_points--;
 }
 
 void	FragTrap::highFivesGuys(void)
